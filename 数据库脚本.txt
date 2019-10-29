@@ -1,0 +1,15 @@
+create database db_openapi1905;
+use db_openapi1905;
+#1、用户表
+create table t_user(id int primary key AUTO_INCREMENT,name varchar(20),pass varchar(80),phone varchar(11));
+#2、用户日志表
+create table t_userlog(id bigint primary key AUTO_INCREMENT,uid int,type int comment '操作类型 1注册2登录3修改信息 4找回密码 5修改密码',ctime date,info varchar(50));
+
+
+select * from t_user;
+
+
+create database db_openmsg1905;
+use db_openmsg1905;
+#1、创建表记录短信发送
+create table t_sms(id int primary key AUTO_INCREMENT,recphone varchar(11),msg varchar(50),ctime date,flag int comment '1 未发送 2 发送成功 3发送失败');
